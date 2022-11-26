@@ -5,120 +5,75 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {
-  box-sizing: border-box;
-}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
-input[type=text], select, textarea {
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+  margin-bottom: 15px;
 }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
+.icon {
+  padding: 10px;
+  background: dodgerblue;
   color: white;
-  padding: 12px 20px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  float: right;
+  width: 100%;
+  opacity: 0.9;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
+.btn:hover {
+  opacity: 1;
 }
 </style>
 </head>
 <body>
 
-<h2>Responsive Form</h2>
-<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+<form action="/action_page.php" style="max-width:500px;margin:auto">
+  <h2>Register Form</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
 
-<div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Country</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Subject</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-</div>
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw">
+  </div>
+
+  <button type="submit" class="btn">Register</button>
+</form>
 
 </body>
 </html>
+
